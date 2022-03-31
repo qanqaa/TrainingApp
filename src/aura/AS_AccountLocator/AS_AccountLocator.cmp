@@ -1,0 +1,23 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes">
+    <lightning:layout horizontalAlign="space" multipleRows="true">
+        <lightning:layoutItem size="12"
+                              mediumDeviceSize="6"
+                              class="slds-p-bottom_small slds-p-right_small">
+            <c:AS_AccountSearch/>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="12"
+                              mediumDeviceSize="6"
+                              class="slds-p-bottom_small slds-p-right_small">
+            DETAILS
+        </lightning:layoutItem>
+        <lightning:layoutItem size="12"
+                              mediumDeviceSize="6"
+                              class="slds-p-bottom_small slds-p-right_small">
+            <c:AS_AccountList/>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="12"
+                              mediumDeviceSize="6">
+            <c:AS_AccountMap/>
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

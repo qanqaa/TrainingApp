@@ -1,0 +1,27 @@
+<aura:component controller="AS_AccountSearchController">
+    <aura:registerEvent name="accountsLoaded" type="c:AS_AccountsLoaded"/>
+
+
+    <aura:attribute name="searchTerm" type="String"/>
+
+    <lightning:card title="Search" iconName="standard:search">
+        <div class="slds-form slds-p-around_small" style="display: flex;">
+            <lightning:input
+                    aura:id="nameInput"
+                    class="slds-size_8-of-12 slds-p-right_x-small"
+                    label="Name"
+                    variant="label-hidden"
+                    value="{!v.searchTerm}"/>
+            <lightning:button
+                    class="slds-size_2-of-12"
+                    label="Search"
+                    variant="brand"
+                    iconName="utility:search"
+                    onclick="{!c.onSearchTermClick}"/>
+            <lightning:button
+                    class="slds-size_2-of-12"
+                    label="Clear"
+                    onclick="{!c.onClearClick}"/>
+        </div>
+    </lightning:card>
+</aura:component>

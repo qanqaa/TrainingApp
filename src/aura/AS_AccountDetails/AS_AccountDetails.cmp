@@ -1,0 +1,18 @@
+<aura:component>
+    <aura:handler event="c:AS_AccountsLoaded" action="{!c.onAccountsLoaded}"/>
+
+    <lightning:navigation aura:id="navigation"/>
+
+    <aura:attribute name="rows" type="Map[]"/>
+    <aura:attribute name="cols" type="Map[]"/>
+    <aura:attribute name="showTable" type="boolean" default="false"/>
+
+    <lightning:card title="Details" iconName="standard:product_item">
+        <aura:if isTrue="{!v.showTable}">
+            True
+            <aura:set attribute="else">
+               False
+            </aura:set>
+        </aura:if>
+    </lightning:card>
+</aura:component>

@@ -1,0 +1,25 @@
+<aura:component>
+    <aura:handler event="c:AS_AccountsLoaded" action="{!c.onAccountsLoaded}"/>
+
+    <lightning:navigation aura:id="navigation"/>
+
+    <aura:attribute name="rows" type="Map[]"/>
+    <aura:attribute name="cols" type="Map[]"/>
+    <aura:attribute name="showTable" type="boolean" default="false"/>
+
+    <lightning:card title="Results" iconName="standard:account">
+        <aura:if isTrue="{!v.showTable}">
+            <lightning:datatable
+                    data="{!v.rows}"
+                    columns="{!v.cols}"
+                    keyField="Id"
+                    wrapTextMaxLines="3"
+                    hideCheckboxColumn="true"
+                    showRowNumberColumn="true"
+                    onrowaction="{!c.onRowAction}"/>
+            <aura:set attribute="else">
+                <div class="slds-align_absolute-center" style="height:5rem">No data to display</div>
+            </aura:set>
+        </aura:if>
+    </lightning:card>
+</aura:component>
